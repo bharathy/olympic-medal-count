@@ -1,0 +1,136 @@
+/* TODO: Organize CSS into small unit, use sass preprocess */
+
+/* Container */
+body {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	font-family: arial;
+	font-size: 15px;
+	justify-content: center;
+	color: #8B8D8F;
+}
+.bld {
+	font-weight: bold
+}
+.container {
+	width: 500px;
+	text-transform: uppercase;
+}
+
+/* table */
+.gridTable {
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+}
+.divTable{
+	display: table;
+}
+.divTableRow {
+	display: table-row;
+	border-bottom: 1px solid #eee;
+}
+.divTableHeading {
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	display: table-cell;
+	padding:8px;
+}
+.divTableBody {
+	display: table-row-group;
+}
+.divTable.gridTable .divTableBody .divTableCell {
+	font-size: 14px;
+}
+.divTable.gridTable .divTableHeading .divTableHead {
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+}
+.divTable.gridTable .divTableHeading {
+	border-bottom: 2px solid  #8B8D8F;
+}
+
+/* medal */
+.gold, .silver, .bronze  {
+	width:20px;
+	height:20px;
+	margin:0 auto;
+	border-radius: 50%;
+	color: transparent;
+	cursor: pointer;
+}
+.total {
+	cursor: pointer;
+}
+.gold {
+	background-color: #F3D156;
+	border:1px solid #F3D156;
+}
+.silver {
+	background-color: #e6e6e6;
+	border:1px solid #e6e6e6;
+}
+.bronze {
+	border:1px solid #7f542c;
+	background-color: #7f542c;
+}
+
+/* flag */
+.country-flag {
+	width: 28px;
+	height: 17px;
+	background: url(./flags.png);
+}
+.flag-AUT {
+	background-position: 0 221px;
+}
+.flag-BLR {
+	background-position: 0 203px;
+}
+.flag-CAN {
+	background-position: 0 187px;
+}
+.flag-CHN {
+	background-position: 0 170px;
+}
+.flag-FRA {
+	background-position: 0 153px;
+}
+.flag-GER {
+	background-position: 0 136px;
+}
+.flag-ITA {
+	background-position: 0 119px;
+}
+.flag-NED {
+	background-position: 0 102px;
+}
+.flag-USA {
+	background-position: 0 17px;
+}
+.flag-RUS {
+	background-position: 0 68px;
+}
+.flag-SUI {
+	background-position: 0 51px;
+}
+.flag-SWE {
+	background-position: 0 34px;
+}
+.flag-NOR {
+	background-position: 0 85px;
+}
+
+/* modifier */
+.active--sort {
+	border-top:2px solid #8B8D8F;
+}
+
+/* error */
+.error{
+	margin-top: 20px;
+    color: #666;
+}

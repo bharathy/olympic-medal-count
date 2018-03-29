@@ -1,0 +1,6 @@
+--require babel-core/register
+--require test/utils/helper.js
+--require test/utils/dom.js
+--require ignore-styles
+--webpack-config webpack.test.config.js
+test/**/*.spec.js*
