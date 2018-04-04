@@ -11,9 +11,10 @@ import reducers from './reducers';
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const store = createStoreWithMiddleware(reducers);
 
-ReactDOM.render(
-  <Provider store={ store }>
-    <MedalCount />
-  </Provider>,
-  document.getElementById('app')
-);
+export const init = (elementId, sortBy) => {
+	ReactDOM.render(
+	<Provider store={ store }>
+		<MedalCount sortBy = { sortBy } />
+	</Provider>, document.getElementById(elementId)
+	);
+}

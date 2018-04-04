@@ -31,7 +31,10 @@ module.exports = {
   output: {
     path: __dirname + '/dist',
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'medal-widget.js',
+    library: 'medalWidget',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
