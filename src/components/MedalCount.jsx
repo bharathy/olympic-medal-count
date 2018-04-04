@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import '../styles/medalCount.css';
@@ -52,6 +53,12 @@ export class MedalCount extends Component {
 			);
 		}
 	}
+}
+
+MedalCount.propTypes = {
+	medals: PropTypes.array,
+	error: PropTypes.object,
+	sortBy: PropTypes.string.isRequired
 }
 
 function mapStateToProps(state) {
