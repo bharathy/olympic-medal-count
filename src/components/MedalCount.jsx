@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import '../styles/medalCount.css';
 
@@ -14,11 +15,12 @@ export class MedalCount extends Component {
 	}
 
 	componentDidMount() {
-		this.props.fetchMedals();
+		this.props.actions.fetchMedals();
 	}
 
 	render() {
-		const { error, medals, sortBy, sortMedals } = this.props;
+		const { error, medals, sortBy, actions } = this.props;
+		const sortMedals = actions.sortMedals;
 		const errorMesage = `Oops! Unable to load medal count. ${ error }! Please try again!`;
 		const topTenCountries = medals => (medals) ? medals.slice(0, 10) : [];
 		const tableRowProps = topTenCountries(medals).map((medal, i) => Object.assign({}, medal, { 'id': i + 1 }));
@@ -58,7 +60,8 @@ export class MedalCount extends Component {
 MedalCount.propTypes = {
 	medals: PropTypes.array,
 	error: PropTypes.object,
-	sortBy: PropTypes.string.isRequired
+	sortBy: PropTypes.string.isRequired,
+	actions: PropTypes.object.isRequired
 }
 
 function mapStateToProps(state) {
@@ -69,4 +72,10 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, medalActions)(MedalCount);
+function mapDispatchToProps(dispatch) {
+	return {
+		actions: bindActionCreators(medalActions, dispatch)
+	};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MedalCount);
