@@ -32,6 +32,7 @@ npm run test:watch
 ```
 
 **Checklist:**
+- [x] Accept upto 2 parameters - elementId & sortBy [Gold, Silver, Bronze, Total]
 - [x] Display only top 10 countries after sorted.
 - [x] Style as per mock given.
 - [x] Use preferably React.
