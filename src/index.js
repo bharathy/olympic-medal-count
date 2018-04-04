@@ -9,12 +9,16 @@ import MedalCount from './components/MedalCount';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
-const store = createStoreWithMiddleware(reducers);
 
 export const init = (elementId, sortBy) => {
+	const initialState = {
+		medals: { sortBy: sortBy || 'gold' }
+	};
+	const store = createStoreWithMiddleware(reducers, initialState);
+
 	ReactDOM.render(
 	<Provider store={ store }>
-		<MedalCount sortBy = { sortBy } />
+		<MedalCount />
 	</Provider>, document.getElementById(elementId)
 	);
 }
